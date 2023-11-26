@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 import requests
 import streamlit.components.v1 as com
-
+import os
 
 def fetch_poster(movie_id):
     # TMDB API = cf4e4064a7e007c24605567fb4fd019c
@@ -39,11 +39,11 @@ def recommend (movie_name):
         
     return recommended_movies,recommended_movie_poster
 
-movies_dict = pickle.load(open('A:\\Machine Learning\\movie_dict.pkl','rb'))
+movies_dict = pickle.load(open('movie_dict.pkl','rb'))
 movies = pd.DataFrame(movies_dict)
 
 
-similar_movie = pickle.load(open('A:\\Machine Learning\\similar_movie.pkl','rb'))
+similar_movie = pickle.load(open('similar_movie.pkl','rb'))
 
 st.title('Movie Recommendation System')
 
