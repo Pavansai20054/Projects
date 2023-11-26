@@ -39,19 +39,17 @@ def recommend (movie_name):
         
     return recommended_movies,recommended_movie_poster
 
-movies_dict = pickle.load(open('A:\Machine Learning\movie_dict.pkl','rb'))
+movies_dict = pickle.load(open('A:\\Machine Learning\\movie_dict.pkl','rb'))
 movies = pd.DataFrame(movies_dict)
 
 
-similar_movie = pickle.load(open('A:\Machine Learning\similar_movie.pkl','rb'))
+similar_movie = pickle.load(open('A:\\Machine Learning\\similar_movie.pkl','rb'))
 
 st.title('Movie Recommendation System')
 
 selected_movie = st.selectbox(
                       'Enter one movie you want to get similar to that.',
                       movies['title'].values)
-
-com.iframe("https://lottie.host/embed/b6fe4165-00e8-4591-8bf7-bcfff8f4506f/fxZaABd4Q3.json")
 
 if st.button('Recommend'):
     movie_name,movie_poster = recommend(selected_movie)
